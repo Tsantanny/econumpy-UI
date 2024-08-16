@@ -10,9 +10,9 @@ export const LoginPage = () => {
       <div className="form-signin rounded">
         <form onSubmit={handleSubmit(handleClick)}>
           <h1 className="mb-3 loginTitle">Welcome back</h1>
-          <p className="text-muted toRegisterRef ">
+          <p className="text-muted toRegisterRef">
             {"Don't have an account?"}
-            <a className="text-primary mx-1">Register</a>
+            <a className="text-primary m-2 goTo ">Register</a>
           </p>
 
           <div className="form-floating m-2">
@@ -46,7 +46,7 @@ export const LoginPage = () => {
           </div>
 
           <button 
-              className="w-100 btn btn-lg" 
+              className="w-100 btn primary-btn  btn-lg" 
               type="submit"
             >
             Sign in
