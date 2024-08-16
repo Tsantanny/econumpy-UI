@@ -1,10 +1,10 @@
-import { LoginPage } from "./pages/LoginPage";
-
+import "./styles/App.css";
 function App() {
-
-  return <>
-    <LoginPage/>
-  </>;
+  return (
+    <>
+      <button className="primary-btn">Primary btn </button>
+    </>
+  );
 }
 
 export default App;
