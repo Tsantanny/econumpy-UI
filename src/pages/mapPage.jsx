@@ -4,7 +4,7 @@ import MyMap from "../components/map";
 function MapPage() {
   return (
     <>
-    <h1>Your location</h1>
+    <h1>pollution around you</h1>
         <MyMap/>
     </>
   );

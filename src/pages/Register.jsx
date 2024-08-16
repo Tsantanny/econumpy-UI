@@ -66,7 +66,7 @@ function RegisterPage() {
               <label htmlFor="floatingInput">password</label>
             </div>
 
-            <button className="primary-btn">Submit</button>
+            <button className="primary-btn mt-2">Submit</button>
           </form>
           <div className="extends"></div>
         </section>

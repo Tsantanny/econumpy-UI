@@ -4,10 +4,11 @@ import "../styles/LoginStyles.css";
 import "../styles/global-style.css";
 
 const LoginPage = () => {
-  const { handleSubmit, register, handleClick, errors } = useLogin();
+  const { handleSubmit, register, handleClick, errors, navigateTo } = useLogin();
 
   return (
     <div className="container">
+
       <img src={imgLeaf} alt="leaf image" />
 
       <div className="form-signin rounded">
@@ -15,7 +16,7 @@ const LoginPage = () => {
           <h1 className="mb-3 loginTitle">Welcome back</h1>
           <p className="text-muted toRegisterRef">
             {"Don't have an account?"}
-            <a className="text-primary m-2 goTo ">Register</a>
+            <a className="text-primary m-2 goTo " onClick={() => navigateTo("/register")} >Register</a>
           </p>
 
           <div className="form-floating m-2">
