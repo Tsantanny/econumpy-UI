@@ -1,5 +1,8 @@
+import axios from 'axios';
 import {useForm} from 'react-hook-form';
 // import { useNavigate } from 'react-router-dom';
+export const BASE_URL = `http://ip:PORT`
+
 
 
 export const useLogin = () => {
@@ -13,10 +16,17 @@ export const useLogin = () => {
 
 
 
-    const handleClick = (data) => {
+    const handleClick = async (data) => {
+        try {
+            const res = await axios.post(`${BASE_URL}/`)
+
+            console.log(res.data);
+            
+        } catch (error) {
+            console.log(error.response.data);
+        }
+
         console.log(data);
-
-
         // navigate("/register")
     }
 
