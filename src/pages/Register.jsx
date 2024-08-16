@@ -9,143 +9,94 @@ function RegisterPage() {
   } = useForm();
   function onSubmit(data) {
     console.log(data);
+
+    
   }
   return (
     <>
-      <div className="register-container container-fluid row">
+      <div className="register-container container-fluid row ">
         {/* <div className="side-hero"></div> */}
 
         <div className="app-desc col-4">
-          <p>welcome</p>
-          <h3>Fill the form and become part of our communities</h3>
+        
+          <h3 className="collapseOnMobile">Fill the form and become part of our communities</h3>
         </div>
-        <form onSubmit={handleSubmit(onSubmit)} className="form-container container p-3 border rounded-3 col-6 text-center">
-          <h1 className="m-3">Sign in </h1>
+        <form onSubmit={handleSubmit(onSubmit)} className="col">
+          <h1 className="mb-3 loginTitle">Welcome </h1>
+          <p className="text-muted toRegisterRef">
+            {"Don't have an account?"}
+            <a className="text-primary m-2 goTo ">Register</a>
+          </p>
 
-          <div className="container name-username row row-cols-3">
-            <span className="reg-btn">
-              <p className="fw-bold">Name</p>
+          <div className="row container-fluid ">
+            <div className="form-floating container row ">
+              <div class="col">
+    <label for="validationServer02" class="form-label">name</label>
+    <input type="text" class="form-control is-valid reg-btn" id="validationServer02" value="Otto" required/>
+    <div class="valid-feedback">
+      Looks good!
+    </div>
+  </div>
+  <div class="col">
+    <label for="validationServerUsername" class="form-label">Username</label>
+    <div class="input-group has-validation reg-btn">
+    
+      <input type="text" class={`form-control reg-btn `} id="validationServerUsername" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required 
+      {...register("username",{
+        required: true
+      })}
+      />
+      <div id="validationServerUsernameFeedback" class="invalid-feedback collapse">
+        Please choose a username.
+      </div>
+    </div>
+  </div>
+            </div>
+            {/* <div className="form-floating col">
               <input
                 type="text"
-                name="nameInput"
-                className="form-control to-be-verified reg-btn"
-                id="name"
-                placeholder="your name here..."
-                {...register("uname", {
-                  required: "please fill out this field",
-                  minLength: {
-                    value: 3,
-                    message: "too short",
-                  },
-                })}
+                className={`form-control ${errors.name && "is-invalid"}}`}
+                id="floatingInput2"
+                placeholder="name"
+                {...register("name", { required: true, pattern: /^\S+@\S+$/i })}
               />
-            </span>
-            <span>
-              <p className="fw-bold ">Username</p>
-              <input
-                type="text"
-                name="UsernameInput"
-                className="form-control to-be-verified reg-btn"
-                id="Username"
-                placeholder="ex :Username2123"
-                {...register("userName", {
-                  required: "please put your username here ",
-                  minLength: {
-                    value: 5,
-                    message: "too short",
-                  },
-                })}
-              />
-            </span>
+              <label htmlFor="floatingInput2">name</label>
+              <p className="invalid-feedback">name is invalid</p>
+            </div> */}
           </div>
-          <div className="email-cont container">
-            <p className="fw-bold text-start">email</p>
+          <div className="form-floating m-2">
             <input
               type="email"
-              name="email"
-              id="email"
-              className="form-control to-be-verified reg-btn"
+              className={`form-control ${errors.email && "is-invalid"}}`}
+              id="floatingInput"
               placeholder="name@example.com"
-              {...register("email", {
-                required: "please put your email here ",
-                pattern: {
-                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                  message: "invalid email address",
-                },
-              })}
+              {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
             />
+            <label htmlFor="floatingInput">Email</label>
+            <p className="invalid-feedback">Email is invalid</p>
           </div>
-          <div className="password-cont container">
-            <p className="fw-bold text-start">password</p>
+
+          <div className="form-floating m-2">
             <input
               type="password"
-              name="password"
-              className="form-control to-be-verified reg-btn"
-              id="password"
-              {...register("password", {
-                required: "type your password here",
-                minLength: {
-                  value: 5,
-                  message: "too weak",
-                },
-              })}
+              className={`form-control ${errors.password && "is-invalid"}`}
+              id="floatingPassword"
+              placeholder="Password"
+              {...register("password", { required: true })}
             />
+            <label htmlFor="floatingPassword">Password</label>
+            <p className="invalid-feedback">Password is invalid</p>
           </div>
-          <div className="password-cont container">
-            <p className="fw-bold text-start">password confirmation</p>
-            <input
-              type="password"
-              name="password"
-              className="form-control to-be-verified reg-btn"
-              id="password"
-              {...register("passwordConfirmation", {
-                required: "type your password here",
-                minLength: {
-                  value: 5,
-                  message: "too weak",
-                },
-              })}
-            />
-          </div>
-          <div className="term-and-conditions form-check">
-            <input
-              type="checkbox"
-              name="check"
-              id="check"
-              className="form-check-input"
-            />
-            <label className="small form-check-label " for="check">
-              {" "}
-              I agree with MyToDos's Terms of Service, Privacy Policy, and
-              default Notification Settings.{" "}
+
+          <div className="checkbox mb-3">
+            <label>
+              <input type="checkbox" value="remember-me" /> Remember me
             </label>
-            <div
-              className="invalid-feedback"
-              defaultChecked={true}
-              //   onClick={handleConditionsOfUse}
-            >
-              you must agree before sign in
-            </div>
           </div>
-          <div>
-            <button
-              // onClick={handleRegister}
-              // disabled={handleEnableSubmit}
-              className="btn btn-dark btn-lg"
-              id="submitBtn"
-              type="submit"
-            >
-              create account
-            </button>
-            <div className="charging-container">
-              <img
-                src="https://www.freeiconspng.com/uploads/loading-icon-png-2.png"
-                className="ratio ratio-1x1 loading collapse"
-                id="loading"
-                alt="charging"
-              />
-            </div>
-          </div>
+
+          <button className="w-100 btn primary-btn  btn-lg" type="submit">
+            Sign in
+          </button>
         </form>
       </div>
     </>
