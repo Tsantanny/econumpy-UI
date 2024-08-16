@@ -15,18 +15,17 @@ export const useLogin = () => {
     } = useForm();
 
 
-
     const handleClick = async (data) => {
         try {
-            const res = await axios.post(`${BASE_URL}/`)
+            // const res = await axios.post(`${BASE_URL}/`)
 
-            console.log(res.data);
+            console.log(data);
             
         } catch (error) {
-            console.log(error.response.data);
+            console.log(error);
         }
 
-        console.log(data);
+        // console.log(data);
         // navigate("/register")
     }
 
