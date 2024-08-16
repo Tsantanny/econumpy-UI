@@ -1,6 +1,9 @@
 import "../styles/RegisterPage.css";
 import logo from "../assets/images/logo.png";
+import { useLogin } from "../components/useLogin";
 function RegisterPage() {
+  const { handleSubmit, register, handleClick, errors, navigateTo } =
+    useLogin();
   return (
     <>
       <div className="background"></div>
@@ -20,9 +23,15 @@ function RegisterPage() {
         <section className="register-container ">
           <h2>Create Your Account</h2>
           <p>
-            Already have an account ? <span>Login</span>
+            Already have an account ?
+            <a
+              className="text-primary m-2 goTo "
+              onClick={() => navigateTo("/login")}
+            >
+              Login
+            </a>
           </p>
-          <form>
+          <form onSubmit={(e) => e.preventDefault()}>
             <div className="d-flex u-name gap-4">
               <div className="form-floating  ">
                 <input
