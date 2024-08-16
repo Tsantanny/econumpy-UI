@@ -1,16 +1,15 @@
 import { useEffect, useState } from 'react';
-import App from '../Chart.jsx'
 import axios from 'axios';
 
-const api_key = "57824b28a16da3eb51a1fe9cdc4f2823"
+export const api_key = "57824b28a16da3eb51a1fe9cdc4f2823"
 
-export const Container = () => {
+export const useChart = () => {
 
-  const [data, setData] = useState({});
+  const [pollutionData, setPollutionData] = useState({});
   
 
   useEffect(() => {
-    const fetchData = async() => {
+    const fetchData = () => {
 
       navigator.geolocation.getCurrentPosition(async (position) => {
         const lat = position.coords.latitude;
@@ -18,8 +17,11 @@ export const Container = () => {
         
         try {
           const res = await axios.get(`http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=${lat}&lon=${lon}&appid=${api_key}`)
-          // console.log(res.data.list[0].main.aqi);
-          setData({co: res.data.list[0].components.co, aqi: res.data.list[0].main.aqi})
+          // console.log(res.data.list[0]);
+          setPollutionData({co: res.data.list[0].components.co, 
+            aqi: res.data.list[0].main.aqi,
+            o3: res.data.list[0].components.o3
+          })
           
         } catch (error) {
           console.log(error);
@@ -44,19 +46,7 @@ export const Container = () => {
     filter: "blur(20%)",
   }
 
-  return (
-    <div className='row vh-100 vw-100'>
-
-      <div className='col-3 bg-secondary'>
-        <div style={style}>
-          <App label="Pollution" currentValue={data.aqi} value={5}  color="green" />
-        </div>
-
-        <div style={style} >
-          <App label="CO2" currentValue={data.co} value={350}  color="red" />
-        </div>
-      </div>
-
-    </div>
-  );
+  return {
+    pollutionData, style
+  }
 };
