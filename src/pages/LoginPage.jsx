@@ -45,13 +45,7 @@ const LoginPage = () => {
             <p className="invalid-feedback">Password is invalid</p>
           </div>
 
-          <div className="checkbox mb-3">
-            <label>
-              <input type="checkbox" value="remember-me" /> Remember me
-            </label>
-          </div>
-
-          <button className="w-100 btn primary-btn  btn-lg" type="submit">
+          <button className="w-100 btn primary-btn mt-4 btn-lg" type="submit">
             Sign in
           </button>
         </form>
