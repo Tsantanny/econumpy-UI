@@ -33,7 +33,7 @@ export const LoginPage = () => {
               className={`form-control ${errors.password && "is-invalid"}`}
               id="floatingPassword"
               placeholder="Password"
-              {...register("password", { required: true })}
+              {...register("password", { required: true , minLength: {value: 8}})}
             />
             <label htmlFor="floatingPassword">Password</label>
             <p className="invalid-feedback">Password is invalid</p>
