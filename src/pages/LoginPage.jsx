@@ -1,4 +1,4 @@
-import { useLogin } from "../components/LoginPage";
+import { useLogin } from "../components/useLogin";
 import imgLeaf from '../../public/leaf.png'
 import "../styles/LoginStyles.css";
 import "../styles/global-style.css";
