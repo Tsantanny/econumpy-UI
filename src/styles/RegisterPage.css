@@ -1,56 +1,73 @@
-:root {
-    --pigment-green: #139a43ff;
-    --air-force-blue: #4e8098ff;
-    --mint-cream: #f1f7edff;
-    --raisin-black: #1a181bff;
-    --burnt-umber: #823329ff;
-  }
-
-.register-container{
-    width: 100dvw;
-    height: 100dvh;
-    background: var(--mint-cream);
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+.register-container {
+  max-width: 600px;
+  padding: 70px 20px 90px 70px;
+  border-radius: 50px;
+  background-color: var(--mint-cream);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.side-hero{
-    background: url('../../public/leaf.png');
-    width: 25%;
-    height: 100%;
-
-}
-.form-container{
-
-}
-.reg-btn{
-    height: 60px;
-    width: 400px;
-}
-.reg-btn-names{
-    height: 60px;
-    width: 240px;
-    margin-right: 20px;
+.register-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-@media (max-width: 1250px) { 
-    .collapseOnMobile{
-        display: none;
-    }
-    .register-container{
-        display: flex;
-        flex-direction: column;
-    }
+form input {
+  height: 50px;
 }
-.names-container{
-display: flex;
-align-items: center;
-width: 800px;
-height: 60px;
+
+.u-name .form-floating {
+  flex: 1;
 }
-.ml{
-    margin-left: 20px;
+
+.main-container {
+  display: flex;
+  z-index: -100;
+  padding-inline: 60px;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  background-size: contain;
+  background-position: right;
+  background-blend-mode: multiply;
+  /*   background-image: url("../../public/leaf.png");
+ */
 }
-.name-input{
-    margin-right: 10px;
+
+.background {
+  position: absolute;
+  z-index: -1;
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: right;
+  background-color: rgb(158, 158, 158);
+  background-blend-mode: multiply;
+  /*   background-image: url("../../public/leaf.png");
+ */
+  background-image: url("../assets/images/register-background.jpg");
+}
+.main-container .presentation {
+  flex-basis: 45%;
+}
+
+.main-container .register-container {
+  flex-basis: 50%;
+}
+
+.logo {
+  width: 150px;
+  filter: invert(100%);
+}
+
+.extends {
+  height: 100vh;
+  position: absolute;
+  width: 150px;
+  background-color: var(--mint-cream);
+  top: 0;
+  z-index: -1;
+  right: 0;
 }

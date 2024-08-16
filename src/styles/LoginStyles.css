@@ -5,18 +5,21 @@ body {
   background-color: var(--raisin-black);
 } */
 
-.container {
+.container-login {
   position: absolute;
   top: 50%;
   left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   transform: translate(-50%, -50%);
   display: flex;
-  height: 50%;
-  width: 30%;
+  min-width: 400px;
   align-items: center;
 }
 
-.container img {
+.container-login img {
   position: absolute;
   width: 300px;
   height: 100%;
@@ -33,17 +36,15 @@ body {
   width: 100%;
   padding: 1.5rem 2.5rem;
   background: var(--mint-cream);
+  padding: 90px 20px;
   border: 1px solid lightgrey;
-  box-shadow: 0.05rem 0.1rem 0.25rem var(--air-force-blue);
 }
 
 .goTo {
   cursor: pointer;
 }
 
-.form-signin form .loginTitle {
-  font-size: 2.2rem;
-}
+
 .form-signin form .toRegisterRef {
   font-size: 0.9rem;
 }
@@ -64,4 +65,8 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+.container-login .primary-btn {
+  width: 100%;
 }
