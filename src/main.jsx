@@ -1,6 +1,7 @@
 import React from "react";
 import Home from "./pages/Home";
 import ReactDOM from "react-dom/client";
+import RegisterPage from "./pages/Register";
 import {
   createBrowserRouter,
   createRoutesFromElements,
