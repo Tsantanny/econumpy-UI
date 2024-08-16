@@ -6,3 +6,16 @@
   --raisin-black: #1a181bff;
   --burnt-umber: #823329ff;
 }
+
+.primary-btn {
+  border: none;
+  color: var(--mint-cream);
+  padding: 10px 30px;
+  border-radius: 20px;
+  background: linear-gradient(
+    to right,
+    var(--pigment-green) 2%,
+    var(--air-force-blue) 50%
+  );
+  font-weight: 500;
+}

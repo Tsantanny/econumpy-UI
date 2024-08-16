@@ -1,10 +1,8 @@
 import "./styles/App.css";
+import "./styles/global-style.css";
+
 function App() {
-  return (
-    <>
-      <button className="primary-btn">Primary btn </button>
-    </>
-  );
+  return <></>;
 }
 
 export default App;
