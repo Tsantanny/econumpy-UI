@@ -2,6 +2,10 @@ import "../styles/RegisterPage.css";
 import { useForm } from "react-hook-form";
 
 function RegisterPage() {
+  const nameInput = document.getElementById("validationServer02");
+  function validate(e) {
+    e.target.classList.add("is-validate");
+  }
   const {
     register,
     handleSubmit,
@@ -9,49 +13,63 @@ function RegisterPage() {
   } = useForm();
   function onSubmit(data) {
     console.log(data);
-
-    
   }
   return (
     <>
       <div className="register-container container-fluid row ">
-        {/* <div className="side-hero"></div> */}
+        <div className="side-hero col"></div>
 
-        <div className="app-desc col-4">
-        
-          <h3 className="collapseOnMobile">Fill the form and become part of our communities</h3>
+        <div className="app-desc col">
+          <h3 className="collapseOnMobile">
+            Fill the form and become part of our communities
+          </h3>
         </div>
-        <form onSubmit={handleSubmit(onSubmit)} className="col">
-          <h1 className="mb-3 loginTitle">Welcome </h1>
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="col-5 needs-validation "
+        >
+          <h1 className="mb-3 loginTitle ">Welcome </h1>
           <p className="text-muted toRegisterRef">
-            {"Don't have an account?"}
-            <a className="text-primary m-2 goTo ">Register</a>
+            {"Already have an account?"}
+            <a className="text-primary m-2  ">sign in</a>
           </p>
 
-          <div className="row container-fluid ">
-            <div className="form-floating container row ">
+          
+            <div className="row mr">
               <div class="col">
-    <label for="validationServer02" class="form-label">name</label>
-    <input type="text" class="form-control is-valid reg-btn" id="validationServer02" value="Otto" required/>
-    <div class="valid-feedback">
-      Looks good!
-    </div>
-  </div>
-  <div class="col">
-    <label for="validationServerUsername" class="form-label">Username</label>
-    <div class="input-group has-validation reg-btn">
-    
-      <input type="text" class={`form-control reg-btn `} id="validationServerUsername" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required 
-      {...register("username",{
-        required: true
-      })}
-      />
-      <div id="validationServerUsernameFeedback" class="invalid-feedback collapse">
-        Please choose a username.
-      </div>
-    </div>
-  </div>
-            </div>
+                <label for="validationServer02" class="form-label">
+                  name
+                </label>
+                <input
+                  onChange={validate}
+                  type="text"
+                  {...register("name", {
+                    required: true,
+                  })}
+                  class="form-control reg-btn-names "
+                  id="validationServer02"
+                  required
+                />
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+              <div class="col">
+                <label for="validationServer02" class="form-label">
+                  name
+                </label>
+                <input
+                  onChange={validate}
+                  type="text"
+                  {...register("name", {
+                    required: true,
+                  })}
+                  class="form-control reg-btn-names "
+                  id="validationServer02"
+                  required
+                />
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+              </div>
+            
             {/* <div className="form-floating col">
               <input
                 type="text"
@@ -63,14 +81,14 @@ function RegisterPage() {
               <label htmlFor="floatingInput2">name</label>
               <p className="invalid-feedback">name is invalid</p>
             </div> */}
-          </div>
-          <div className="form-floating m-2">
+          <div className="form-floating m-2 row">
             <input
               type="email"
               className={`form-control ${errors.email && "is-invalid"}}`}
               id="floatingInput"
               placeholder="name@example.com"
               {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
+              required
             />
             <label htmlFor="floatingInput">Email</label>
             <p className="invalid-feedback">Email is invalid</p>
@@ -90,7 +108,8 @@ function RegisterPage() {
 
           <div className="checkbox mb-3">
             <label>
-              <input type="checkbox" value="remember-me" /> Remember me
+              <input type="checkbox" value="remember-me" required /> accept our{" "}
+              <a href="#">terms & privacy</a>
             </label>
           </div>
 
