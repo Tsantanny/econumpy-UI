@@ -1,0 +1,29 @@
+:root {
+    --pigment-green: #139a43ff;
+    --air-force-blue: #4e8098ff;
+    --mint-cream: #f1f7edff;
+    --raisin-black: #1a181bff;
+    --burnt-umber: #823329ff;
+  }
+
+.register-container{
+    width: 100%;
+    height: 100dvh;
+    background: var(--mint-cream);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.side-hero{
+    background: #000;
+    width: 25%;
+    height: 100%;
+
+}
+.form-container{
+
+}
+.reg-btn{
+    height: 60px;
+    width: 350px;
+}
