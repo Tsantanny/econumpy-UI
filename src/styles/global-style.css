@@ -19,3 +19,22 @@
   );
   font-weight: 500;
 }
+
+.round-btn {
+  border: 50%;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--mint-cream);
+  border: none;
+}
+.round-btn i {
+  font-size: 20px;
+}
+
+.min-container {
+  padding-inline: 35px;
+}
