@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 import RegisterPage from "./pages/Register";
 import LoginPage from "./pages/LoginPage";
 
-import MapPage from "./pages/map";
+import MapPage from "./pages/mapPage";
 import {
   createBrowserRouter,
   createRoutesFromElements,
