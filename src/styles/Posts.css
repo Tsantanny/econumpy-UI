@@ -1,0 +1,65 @@
+.post-container {
+  background-color: rgb(247, 247, 247);
+
+  width: 100%;
+  position: relative;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.user {
+  width: 50px;
+  height: 50px;
+  object-position: top;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.profile {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+.post-header {
+  display: flex;
+  align-items: center;
+}
+.post-header .date {
+  position: absolute;
+  font-size: 18px;
+  right: 20px;
+}
+
+.post-content .title-text {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.post-content .title {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.post-content .tag {
+  background-color: rgb(154, 210, 128);
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.reaction-panel {
+  display: flex;
+  gap: 20px;
+}
+
+.reaction-panel div {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  cursor: pointer;
+}
+.reaction-panel div span::selection {
+  background: none;
+}
+.reaction-panel i {
+  font-size: 20px;
+}

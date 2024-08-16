@@ -1,11 +1,12 @@
 .side-bar {
   background-color: rgb(247, 247, 247);
-  width: fit-content;
+  width: 280px;
   height: calc(100vh - 70px);
   z-index: 200;
-  top: 0;
+  top: 70px;
   padding-right: 100px;
   padding-top: 30px;
+  position: fixed;
 }
 
 .min-container.side-bar.box-shadow {
