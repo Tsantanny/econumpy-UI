@@ -15,7 +15,7 @@
     justify-content: space-around;
 }
 .side-hero{
-    background: #000;
+    background: url('../../public/leaf.png');
     width: 25%;
     height: 100%;
 
@@ -27,6 +27,11 @@
     height: 60px;
     width: 400px;
 }
+.reg-btn-names{
+    height: 60px;
+    width: 240px;
+    margin-right: 20px;
+}
 
 @media (max-width: 1250px) { 
     .collapseOnMobile{
@@ -36,4 +41,16 @@
         display: flex;
         flex-direction: column;
     }
+}
+.names-container{
+display: flex;
+align-items: center;
+width: 800px;
+height: 60px;
+}
+.ml{
+    margin-left: 20px;
+}
+.name-input{
+    margin-right: 10px;
 }
