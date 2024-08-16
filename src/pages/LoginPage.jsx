@@ -1,5 +1,6 @@
 import { useLogin } from "../components/LoginPage";
 import "../styles/LoginStyles.css";
+import "../styles/global-style.css";
 
 export const LoginPage = () => {
   const { handleSubmit, register, handleClick, errors } = useLogin();
@@ -8,8 +9,8 @@ export const LoginPage = () => {
     <>
       <div className="form-signin rounded">
         <form onSubmit={handleSubmit(handleClick)}>
-          <h1 className="mb-3 fw-normal">Welcome back</h1>
-          <p className="text-muted">
+          <h1 className="mb-3 loginTitle">Welcome back</h1>
+          <p className="text-muted toRegisterRef ">
             {"Don't have an account?"}
             <a className="text-primary mx-1">Register</a>
           </p>
@@ -44,7 +45,10 @@ export const LoginPage = () => {
             </label>
           </div>
 
-          <button className="w-100 btn btn-lg btn-primary" type="submit">
+          <button 
+              className="w-100 btn btn-lg" 
+              type="submit"
+            >
             Sign in
           </button>
         </form>

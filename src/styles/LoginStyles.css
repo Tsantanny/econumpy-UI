@@ -11,8 +11,15 @@ body {
 .form-signin {
   height: fit-content;
   padding: 2rem;
-  background: #40404040;
+  background: var(--mint-cream);
   border: 1px solid lightgrey;
+}
+
+.form-signin form .loginTitle {
+  font-size: 2.25rem;
+}
+.form-signin form .toRegisterRef {
+  font-size: .9rem;
 }
 
 .form-signin .checkbox {
@@ -31,4 +38,12 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+.form-signin .btn {
+  background: linear-gradient(
+    to right, 
+    var(--pigment-green) 2%,
+    var(--air-force-blue) 50%
+  );
 }
