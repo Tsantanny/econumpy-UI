@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import App from '../Chart.jsx'
+// import App from '../Chart.jsx'
 import axios from 'axios';
 
-const api_key = "57824b28a16da3eb51a1fe9cdc4f2823"
+export const api_key = "57824b28a16da3eb51a1fe9cdc4f2823"
 
 export const Container = () => {
 
