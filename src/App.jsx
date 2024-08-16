@@ -1,5 +1,10 @@
+import "./styles/App.css";
 function App() {
-  return <>hey</>;
+  return (
+    <>
+      <button className="primary-btn">Primary btn </button>
+    </>
+  );
 }
 
 export default App;
