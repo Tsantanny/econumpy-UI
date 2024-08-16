@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { MapContainer, TileLayer, Circle, Popup, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import "../styles/map.css"
-import { api_key } from './Container';
-
+// import { api_key } from './Container';
+import { api_key } from './Chart/useChart';
 // Composant pour recentrer la carte
 const CenterMapOnSearch = ({ coords }) => {
   const map = useMap();
@@ -97,6 +97,7 @@ const PollutionMap = () => {
 
   // Fonction pour déterminer la couleur en fonction de l'AQI
   const getAQIColor = (aqi) => {
+    console.log(aqi)
     switch (aqi) {
       case 1: return 'green'; // Good
       case 2: return 'yellow'; // Fair

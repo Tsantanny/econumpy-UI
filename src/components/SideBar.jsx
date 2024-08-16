@@ -10,6 +10,7 @@ function SideBar() {
         <ul className="list-unstyled ">
           <li className="active d-flex align-items-center ">
             <i className="fas fa-home"></i>
+            
             Home
           </li>
           <li className="d-flex align-items-center ">

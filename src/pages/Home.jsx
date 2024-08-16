@@ -6,6 +6,7 @@ function Home() {
     <>
       <Header></Header>
       <SideBar></SideBar>
+      
     </>
   );
 }
