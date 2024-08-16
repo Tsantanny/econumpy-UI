@@ -34,3 +34,7 @@
 .round-btn i {
   font-size: 20px;
 }
+
+.min-container {
+  padding-inline: 35px;
+}

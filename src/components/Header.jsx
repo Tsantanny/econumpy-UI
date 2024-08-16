@@ -4,8 +4,8 @@ import logo from "../assets/images/logo.png";
 
 function Header() {
   return (
-    <div className="header">
-      <div className="container d-flex">
+    <div className="min-container header">
+      <div className="d-flex">
         <img src={logo} className="dashboard-logo" alt="Logo" />{" "}
         <div className="search-bar">
           <input type="text" />
@@ -13,7 +13,6 @@ function Header() {
             <i className="fas fa-search"></i>
           </button>
         </div>
-        
         <div className="personnal">
           <button className="round-btn">
             <i className="fas fa-user"></i>
