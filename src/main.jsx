@@ -8,7 +8,6 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import RegisterPage from "./pages/Register";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
