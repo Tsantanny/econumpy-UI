@@ -6,12 +6,20 @@ import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 import "../styles/map.css"
 
-// Corriger le problème d'icônes avec Leaflet dans React
+
 let DefaultIcon = L.icon({
   iconUrl: icon,
   shadowUrl: iconShadow,
   iconAnchor: [12, 41],
 });
+
+let EventIcon = L.icon({
+    // iconUrl: require('./path-to-your-icon.png'),
+    iconSize: [38, 38], 
+    iconAnchor: [19, 38], 
+    popupAnchor: [0, -38],
+});
+
 
 L.Marker.prototype.options.icon = DefaultIcon;
 
