@@ -1,0 +1,42 @@
+.side-bar {
+  background-color: rgb(247, 247, 247);
+  width: fit-content;
+  height: calc(100vh - 70px);
+  z-index: 200;
+  top: 0;
+  padding-right: 100px;
+  padding-top: 30px;
+}
+
+.min-container.side-bar.box-shadow {
+  box-shadow: 0px 10px 8px rgba(0, 0, 0, 0.2);
+}
+
+.side-bar ul {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.log-out {
+  position: absolute;
+  bottom: 20px;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 20px;
+  background: var(--mint-cream);
+  font-weight: 500;
+  border: 2px solid;
+}
+
+.side-bar li i {
+  color: rgb(95, 95, 95);
+}
+
+.side-bar li {
+  gap: 30px;
+}
+
+.side-bar .active i {
+  color: var(--air-force-blue);
+}

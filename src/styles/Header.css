@@ -1,6 +1,6 @@
 /* header */
 .header {
-  padding-block: 10px;
+  background-color: rgb(247, 247, 247);
 }
 
 .header i {
@@ -10,6 +10,7 @@
   height: 40px;
 }
 .header .d-flex {
+  height: 70px;
   justify-content: space-between;
   align-items: center;
 }
@@ -25,22 +26,17 @@
   flex: 1;
   border: none;
   outline: none;
-  padding-inline: 20px;
+  padding-inline: 30px;
 }
 
 .search-bar {
   background-color: var(--mint-cream);
   display: flex;
   border-radius: 20px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .personnal {
   display: flex;
   gap: 20px;
   height: fit-content;
-}
-
-.personnal button {
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
