@@ -2,23 +2,21 @@ import "../styles/global-style.css";
 import "../styles/SideBar.css";
 import logo from "../assets/images/logo.png";
 import Header from "./Header";
-
+import { useNavigate } from "react-router-dom";
 function SideBar() {
+  const navto = useNavigate()
   return (
     <>
       <section className="min-container side-bar box-shadow">
         <ul className="list-unstyled ">
           <li className="active d-flex align-items-center ">
             <i className="fas fa-home"></i>
+            
             Home
           </li>
           <li className="d-flex align-items-center ">
             <i className="fas fa-calendar-alt"></i>
             Recent Events
-          </li>
-          <li className="d-flex align-items-center ">
-            <i className="fas fa-briefcase"></i>
-            Jobs
           </li>
           <li className="d-flex align-items-center ">
             <i className="fas fa-heartbeat"></i>
@@ -29,7 +27,9 @@ function SideBar() {
             Community
           </li>
         </ul>
-        <button className="log-out text-dark box-shadow">Log Out</button>
+        <button onClick={()=>{
+          navto('/login')
+        }} className="log-out text-dark box-shadow" >Log Out</button>
       </section>
     </>
   );
