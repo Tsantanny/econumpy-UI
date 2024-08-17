@@ -1,9 +1,8 @@
 import "../styles/RegisterPage.css";
 import logo from "../assets/images/logo.png";
-import { useLogin } from "../components/useLogin";
+import { useRegister } from "../components/useRegister";
 function RegisterPage() {
-  const { handleSubmit, register, handleClick, errors, navigateTo } =
-    useLogin();
+  const { handleSubmit, register, handleClick, errors, navigateTo, handleRadioChange } = useRegister()
   return (
     <>
       <div className="background"></div>
@@ -31,48 +30,64 @@ function RegisterPage() {
               Login
             </a>
           </p>
-          <form onSubmit={(e) => e.preventDefault()}>
+          <form onSubmit={handleSubmit(handleClick)}>
             <div className="d-flex u-name gap-4">
               <div className="form-floating  ">
                 <input
-                  type="email"
+                  type="text"
                   className={`form-control `}
-                  id="floatingInput"
-                  placeholder="name@example.com"
+                  id="floatingInputName"
+                  placeholder="Name"
+                  {...register('name')}
                   required
                 />
-                <label htmlFor="floatingInput">name</label>
+                <label htmlFor="floatingInputName">Name</label>
               </div>
               <div className="form-floating  ">
                 <input
-                  type="email"
+                  type="text"
                   className={`form-control `}
-                  id="floatingInput"
-                  placeholder="name@example.com"
+                  id="floatingInputUsername"
+                  placeholder="Username"
+                  {...register('username')}
                   required
                 />
-                <label htmlFor="floatingInput">username</label>
+                <label htmlFor="floatingInputUsername">Username</label>
               </div>
             </div>
             <div className="form-floating ">
               <input
                 type="email"
                 className={`form-control `}
-                id="floatingInput"
+                id="floatingInputEmail"
                 placeholder="name@example.com"
+                {...register('email')}
                 required
               />
-              <label htmlFor="floatingInput">email</label>
+              <label htmlFor="floatingInputEmail">Email</label>
             </div>
             <div className="form-floating ">
               <input
-                type="email"
+                type="password"
                 className={`form-control `}
-                id="floatingInput"
-                placeholder="name@example.com"
+                id="floatingInputPassword"
+                placeholder="Paswwordm"
+                {...register('password', {required: true, minLength: {value: 6}})}
                 required
               />
-              <label htmlFor="floatingInput">password</label>
+              <label htmlFor="floatingInputPassword">Password</label>
+            </div>
+
+            <div>
+              <label>Account type :</label>
+              <div className="form-check form-check-inline mx-3">
+                <input className="form-check-input" onChange={(e) => handleRadioChange(e)}  type="radio" name="category" id="inlineRadio1" value="individual"/>
+                <label className="form-check-label" htmlFor="inlineRadio1">Inidividual</label>
+              </div>
+              <div className="form-check form-check-inline">
+                <input className="form-check-input" onChange={(e) => handleRadioChange(e)}  type="radio" name="category" id="inlineRadio2" value="organization"/>
+                <label className="form-check-label" htmlFor="inlineRadio2">Organization</label>
+              </div>
             </div>
 
             <button className="primary-btn mt-2">Submit</button>
