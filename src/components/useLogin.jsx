@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useState } from 'react';
 
-export const BASE_URL = `http://192.168.0.77:8080`
+export const BASE_URL = `http://192.168.43.172:8080`
 
 export const useLogin = () => {
     const navigate = useNavigate();
