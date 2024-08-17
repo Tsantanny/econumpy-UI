@@ -19,8 +19,6 @@ export const useRegister  = () => {
 
 
     const handleClick = async (data) => {
-
-
         try {
             const res = await axios.post(`${BASE_URL}/api/${category}/add`, category === 'individual' ? 
                 {...data, birthdate: null, contact: null, address: null} : 
@@ -29,6 +27,7 @@ export const useRegister  = () => {
             
             if (res.data) {
                 console.log(data, category);
+                localStorage.setItem(`${data.email}-category`, category)
                 
                 navigate("/login")
             }else throw new Error("Register failed");

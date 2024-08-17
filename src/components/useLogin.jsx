@@ -18,10 +18,10 @@ export const useLogin = () => {
 
     const handleClick = async (data) => {
         try {
-            const res = await axios.post(`${BASE_URL}/api/individual/authentication`, data)
+            const res = await axios.post(`${BASE_URL}/api/${localStorage.getItem(`${localStorage.getItem(`${data.email}-category`)}`)}/authentication`, data)
             
             if (res.data) {
-                localStorage.setItem('email', data.email)
+                localStorage.setItem(`email-${data.email}}`, data.email)
     
                 navigate("/")
             }else throw new Error("Connection failed");

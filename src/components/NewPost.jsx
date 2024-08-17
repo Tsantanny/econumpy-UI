@@ -34,29 +34,29 @@ function NewPost() {
                 placeholder="post title"
               />
 
-              <div class="mb-3 d-flex gap-3">
-                <label class="form-check-label">Category:</label>
-                <div class="form-check">
+              <div className="mb-3 d-flex gap-3">
+                <label className="form-check-label">Category:</label>
+                <div className="form-check">
                   <input
-                    class="form-check-input"
+                    className="form-check-input"
                     type="radio"
                     name="category"
                     id="environment"
                     value="environment"
                   />
-                  <label class="form-check-label" for="environment">
+                  <label className="form-check-label" htmlFor="environment">
                     Environment
                   </label>
                 </div>
-                <div class="form-check">
+                <div className="form-check">
                   <input
-                    class="form-check-input"
+                    className="form-check-input"
                     type="radio"
                     name="category"
                     id="health"
                     value="health"
                   />
-                  <label class="form-check-label" for="health">
+                  <label className="form-check-label" htmlFor="health">
                     Health
                   </label>
                 </div>
