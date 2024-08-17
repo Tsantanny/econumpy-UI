@@ -1,0 +1,34 @@
+.right-sidebar-container {
+  background-color: rgb(247, 247, 247);
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  top: 90px;
+  width: 300px;
+  border-radius: 20px;
+  box-shadow: -2px 20px 20px rgb(179, 179, 179);
+  padding: 20px;
+}
+
+.right-sidebar-container ul li {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  cursor: pointer;
+}
+.right-sidebar-container ul {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.secondary-btn {
+  border: none;
+  padding: 10px 30px;
+  border-radius: 20px;
+  background: var(--mint-cream);
+  font-weight: 500;
+  border: 2px solid;
+}

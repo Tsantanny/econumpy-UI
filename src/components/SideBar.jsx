@@ -17,10 +17,6 @@ function SideBar() {
             Recent Events
           </li>
           <li className="d-flex align-items-center ">
-            <i className="fas fa-briefcase"></i>
-            Jobs
-          </li>
-          <li className="d-flex align-items-center ">
             <i className="fas fa-heartbeat"></i>
             Health
           </li>

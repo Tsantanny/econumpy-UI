@@ -2,10 +2,11 @@ import Header from "../components/Header";
 import SideBar from "../components/SideBar";
 import Posts from "../components/Posts";
 import NewPost from "../components/NewPost";
+import RightSideBar from "../components/RightSideBar";
 function Home() {
   return (
     <>
-      <NewPost></NewPost>
+      {/* <NewPost></NewPost> */}
       <Header></Header>
       <SideBar></SideBar>
       <div
@@ -15,6 +16,7 @@ function Home() {
         <Posts></Posts>
         <Posts></Posts>
         <Posts></Posts>
+        <RightSideBar></RightSideBar>
       </div>
     </>
   );
