@@ -4,14 +4,16 @@ import logo from "../assets/images/logo.png";
 import Header from "./Header";
 import { useNavigate } from "react-router-dom";
 function SideBar() {
-  const navto = useNavigate()
+  const navto = useNavigate();
   return (
     <>
       <section className="min-container side-bar box-shadow">
         <ul className="list-unstyled ">
-          <li className="active d-flex align-items-center ">
+          <li
+            onClick={() => navto("/")}
+            className="active d-flex align-items-center "
+          >
             <i className="fas fa-home"></i>
-            
             Home
           </li>
           <li className="d-flex align-items-center ">
@@ -27,9 +29,14 @@ function SideBar() {
             Community
           </li>
         </ul>
-        <button onClick={()=>{
-          navto('/login')
-        }} className="log-out text-dark box-shadow" >Log Out</button>
+        <button
+          onClick={() => {
+            navto("/login");
+          }}
+          className="log-out text-dark box-shadow"
+        >
+          Log Out
+        </button>
       </section>
     </>
   );
