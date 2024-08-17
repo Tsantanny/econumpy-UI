@@ -4,9 +4,9 @@ import { Chart as ChartJS, ArcElement, Tooltip } from "chart.js";
 import { useChart } from "./useChart";
 ChartJS.register(ArcElement, Tooltip);
 
-const PieChart = ({ label, keys, value, color }) => {
+const PieChart = ({ label, keys, value, color, width}) => {
 
-  const {pollutionData, style} = useChart();
+  const {pollutionData} = useChart();
 
   console.log(pollutionData);
   
@@ -15,7 +15,7 @@ const PieChart = ({ label, keys, value, color }) => {
     labels: [label, "void"],
     datasets: [
       {
-        data: [pollutionData[`${keys}`], value-pollutionData[`${keys}`]],
+        data: [pollutionData[`${keys}`], value - pollutionData[`${keys}`]],
         backgroundColor: [color, "transparent"],
         hoverBackgroundColor: ["lightgreen", "transparent"],
         borderWidth: 1,
@@ -24,15 +24,19 @@ const PieChart = ({ label, keys, value, color }) => {
     ],
   };
 
-  // const options = {
-  //   // Vous pouvez personnaliser les options du graphique ici
-  //   plugins: {
-  //     doughnut: {
-  //       borderWidth: 0,
-  //       borderColor: "#40404040", // Épaisseur de la bordure en pixels
-  //     },
-  //   },
-  // };
+  const style = {
+    width: `${width}px`,
+    height: "100px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    padding: "1rem 2rem",
+    border: "1px solid grey",
+    borderRadius: "2rem",
+    margin: "1rem",
+    background: "#40404040",
+    filter: "blur(20%)",
+  }
 
   return (
     <div style={style}>

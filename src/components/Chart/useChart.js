@@ -32,21 +32,9 @@ export const useChart = () => {
     fetchData();
   }, [])
 
-  const style = {
-    width: "200px",
-    height: "100px",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    padding: "1rem 2rem",
-    border: "1px solid grey",
-    borderRadius: "2rem",
-    margin: "1rem",
-    background: "#40404040",
-    filter: "blur(20%)",
-  }
+ 
 
   return {
-    pollutionData, style
+    pollutionData
   }
 };

@@ -1,7 +1,7 @@
 import {useForm} from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-
+import { useState } from 'react';
 
 export const BASE_URL = `http://192.168.0.31:8080`
 
@@ -9,6 +9,10 @@ export const BASE_URL = `http://192.168.0.31:8080`
 
 export const useLogin = () => {
     const navigate = useNavigate();
+
+    const [category, setCategory] = useState("");
+    const [isError, setIsError] = useState(false);
+
     const {
         register, 
         handleSubmit, 
@@ -17,22 +21,36 @@ export const useLogin = () => {
 
 
     const handleClick = async (data) => {
+        // console.log(data);
         try {
-            const res = await axios.post(`${BASE_URL}/api/${localStorage.getItem(`${localStorage.getItem(`${data.email}-category`)}`)}/authentication`, data)
+            const isUserExists = await axios.get(`${BASE_URL}/api/individual/${data.email}`)
             
-            if (res.data) {
-                localStorage.setItem(`email-${data.email}}`, data.email)
-    
-                navigate("/")
-            }else throw new Error("Connection failed");
+            if (isUserExists) {
+
+                
+                const res = await axios.post(`${BASE_URL}/api/${category}/authentication`, data)
+                            
+                    if (res.data) {
+                        console.log("OK");
+                        localStorage.setItem(`email-${data.email}`, data.email)
+                        navigate("/")
+                    }else throw new Error("Connection failed");
+            }
 
         } catch (error) {
-
-            errors.isErrors = true;
+            setIsError(!isError);
             console.log(error.message);
+            setTimeout(() => {
+                setIsError(false)
+            }, 3000);
         }
+
+        
     }
 
+    const handleRadioChange = (e) => {
+        setCategory(e.target.value)
+    }
     /**
      * @param {string} path 
      */
@@ -41,6 +59,6 @@ export const useLogin = () => {
     }
 
     return {
-        register, handleSubmit, errors, handleClick, navigateTo
+        register, handleSubmit, errors, handleClick, navigateTo, handleRadioChange, isError
     }
 }
