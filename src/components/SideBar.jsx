@@ -9,20 +9,23 @@ function SideBar() {
     <>
       <section className="min-container side-bar box-shadow">
         <ul className="list-unstyled ">
-          <li className="active d-flex align-items-center ">
+          <li 
+            className="active d-flex align-items-center " 
+            onClick={() => navto('/')}
+            style={{cursor: "pointer"}}
+          >
             <i className="fas fa-home"></i>
-            
             Home
           </li>
-          <li className="d-flex align-items-center ">
+          <li className="d-flex align-items-center "  style={{cursor: "pointer"}}>
             <i className="fas fa-calendar-alt"></i>
             Recent Events
           </li>
-          <li className="d-flex align-items-center ">
+          <li className="d-flex align-items-center "  style={{cursor: "pointer"}}>
             <i className="fas fa-heartbeat"></i>
             Health
           </li>
-          <li className="d-flex align-items-center ">
+          <li className="d-flex align-items-center "  style={{cursor: "pointer"}}>
             <i className="fas fa-users"></i>
             Community
           </li>

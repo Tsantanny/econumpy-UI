@@ -3,35 +3,30 @@ import user from "../assets/images/user.jpeg";
 import { useState } from "react";
 function Posts() {
   const today = new Date();
-const day = String(today.getDate()).padStart(2, '0');
-const month = String(today.getMonth() + 1).padStart(2, '0'); // Les mois sont indexés à partir de 0
-const year = today.getFullYear();
+  const day = String(today.getDate()).padStart(2, "0");
+  const month = String(today.getMonth() + 1).padStart(2, "0"); // Les mois sont indexés à partir de 0
+  const year = today.getFullYear();
 
-const formattedDate = `${day}/${month}/${year}`;
-// console.log(formattedDate);
+  const formattedDate = `${day}/${month}/${year}`;
+  // console.log(formattedDate);
 
-  const [like,setlike] = useState(0);
+  const [like, setlike] = useState(0);
   function handleLike() {
-    if(like!=1){
-      setlike(1)
-      setdislike(0)
-    
-    }else if (like==1){
-
-      setlike(0)
+    if (like != 1) {
+      setlike(1);
+      setdislike(0);
+    } else if (like == 1) {
+      setlike(0);
     }
   }
-  const [dislike,setdislike] = useState(0);
+  const [dislike, setdislike] = useState(0);
   function handledisLike() {
-    if(dislike!=1){
-      setdislike(1)
-      setlike(0)
-    
-    }else if(dislike == 1){
-
-      setdislike(0)
+    if (dislike != 1) {
+      setdislike(1);
+      setlike(0);
+    } else if (dislike == 1) {
+      setdislike(0);
     }
-
   }
   return (
     <>
@@ -46,20 +41,22 @@ const formattedDate = `${day}/${month}/${year}`;
         <div className="post-content mt-4">
           <div className="title">
             <span className="title-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Our Forests Are Under Threat – Let's Take Action Now
             </span>
             <span className="tag">Environment</span>
           </div>
           <p className="mt-4">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Consectetur corporis nisi, reprehenderit dicta quibusdam, quos
-            cupiditate, numquam omnis perspiciatis dolorum error enim in
-            repellat quasi hic consequuntur eos eum vitae!
+            The deforestation rates have increased alarmingly in recent years,
+            putting our planet’s biodiversity at great risk. It is crucial for
+            us to unite as a community to promote sustainable practices and
+            advocate for the protection of our forests. Every action counts,
+            from reducing paper usage to supporting reforestation initiatives.
+            Let's make a difference together.
           </p>
         </div>
         <div className="reaction-panel">
           <div onClick={handleLike}>
-            <i className="fas fa-thumbs-up" ></i>
+            <i className="fas fa-thumbs-up"></i>
             <span>{like}</span>
           </div>
           <div onClick={handledisLike}>
@@ -71,6 +68,5 @@ const formattedDate = `${day}/${month}/${year}`;
     </>
   );
 }
-
 
 export default Posts;
