@@ -127,12 +127,12 @@ const PollutionMap = () => {
           <input
             type="text"
             className="form-control"
-            placeholder="Entrez un lieu pour rechercher"
+            placeholder="Find air quality by location"
             value={searchLocation}
             onChange={(e) => setSearchLocation(e.target.value)}
           />
-          <button className="btn btn-primary" type="submit">Rechercher</button>
-          <button type="button" className="btn btn-secondary ms-2" onClick={handleMyPosition}>My Position</button>
+          <button className="btn btn-primary" type="submit">Search</button>
+          <button type="button" className="btn btn-secondary ms-2" onClick={handleMyPosition}>Check Air Quality at My Location</button>
         </form>
       </div>
 

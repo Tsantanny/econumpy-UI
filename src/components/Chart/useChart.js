@@ -49,6 +49,5 @@ export const useChart = () => {
 
   return {
     pollutionData,
-    
   };
 };
