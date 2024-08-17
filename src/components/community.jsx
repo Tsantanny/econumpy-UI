@@ -1,0 +1,7 @@
+function community() {
+    return(
+        <>
+        COMUUNIYTYY
+        </>
+    )
+}
