@@ -26,7 +26,7 @@ function RightSideBar() {
 
         <button
           className="secondary-btn box-shadow cursor-pointer mt-5"
-          onClick={() => navigateTo("/register")}
+          onClick={() => navigateTo("/map")}
         >
           View More Metrics
         </button>

@@ -5,12 +5,12 @@ import NotificationDropdown from "./notification";
 
 function Header() {
   const today = new Date();
-const day = String(today.getDate()).padStart(2, '0');
-const month = String(today.getMonth() + 1).padStart(2, '0'); // Les mois sont indexés à partir de 0
-const year = today.getFullYear();
+  const day = String(today.getDate()).padStart(2, "0");
+  const month = String(today.getMonth() + 1).padStart(2, "0"); // Les mois sont indexés à partir de 0
+  const year = today.getFullYear();
 
-const formattedDate = `${day}/${month}/${year}`;
-console.log(formattedDate);
+  const formattedDate = `${day}/${month}/${year}`;
+  console.log(formattedDate);
 
   return (
     <div className="min-container header">
@@ -29,34 +29,36 @@ console.log(formattedDate);
         </div>
         <div className="personnal">
           <button className="round-btn box-shadow">
+            <i className="fas fa-plus"></i>
+          </button>
+          <button className="round-btn box-shadow">
             <i className="fas fa-user"></i>
           </button>
-          
-          <NotificationDropdown notifications={
-            [
-              {
-                 content : "content",
-              date : formattedDate
-              },
-              {
-                 content : "content",
-              date : "date"
-              },
-              {
-                 content : "content",
-              date : "date"
-              },
-              {
-                 content : "content",
-              date : "date"
-              },
-              {
-                 content : "content",
-              date : "date"
-              }
-            ]
-          }/>
 
+          <NotificationDropdown
+            notifications={[
+              {
+                content: "content",
+                date: formattedDate,
+              },
+              {
+                content: "content",
+                date: "date",
+              },
+              {
+                content: "content",
+                date: "date",
+              },
+              {
+                content: "content",
+                date: "date",
+              },
+              {
+                content: "content",
+                date: "date",
+              },
+            ]}
+          />
         </div>
       </div>
     </div>
