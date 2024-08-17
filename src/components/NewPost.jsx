@@ -2,7 +2,22 @@ import "../styles/NewPost.css";
 import { useState } from "react";
 import { useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { useForm } from "react-hook-form";
+import axios from "axios";
 function NewPost() {
+  const {handleSubmit,register, formState : {err}} = useForm()
+
+  function onAdd(data) {
+    console.log(data);
+    axios.post("",
+     {
+      postId: crypto.randomUUID(),
+      ...data
+     } 
+    )
+    
+  }
+
   const popUpRef = useRef(null);
   const [isUpdating, setIsUpdating] = useState(true);
   const darkBackground = isUpdating
@@ -32,9 +47,12 @@ function NewPost() {
                 type="text"
                 className="form-control mb-4 mt-3"
                 placeholder="post title"
+                {...register("title",{
+                  required: true
+                })}
               />
 
-              <div class="mb-3 d-flex gap-3">
+              <div class="mb-3 d-flex gap-3" {...register("postType")}>
                 <label class="form-check-label">Category:</label>
                 <div class="form-check">
                   <input
@@ -56,7 +74,7 @@ function NewPost() {
                     id="health"
                     value="health"
                   />
-                  <label class="form-check-label" for="health">
+                  <label class="form-check-label" for="health" >
                     Health
                   </label>
                 </div>
@@ -66,6 +84,9 @@ function NewPost() {
                 className="form-control"
                 placeholder="description"
                 rows="4"
+                {...register("description",{
+                  required : true
+                })}
               ></textarea>
             </div>
           </motion.div>

@@ -1,8 +1,17 @@
 import "../styles/global-style.css";
 import "../styles/Header.css";
 import logo from "../assets/images/logo.png";
+import NotificationDropdown from "./notification";
 
 function Header() {
+  const today = new Date();
+const day = String(today.getDate()).padStart(2, '0');
+const month = String(today.getMonth() + 1).padStart(2, '0'); // Les mois sont indexés à partir de 0
+const year = today.getFullYear();
+
+const formattedDate = `${day}/${month}/${year}`;
+console.log(formattedDate);
+
   return (
     <div className="min-container header">
       <div className="d-flex">
@@ -22,9 +31,32 @@ function Header() {
           <button className="round-btn box-shadow">
             <i className="fas fa-user"></i>
           </button>
-          <button className="round-btn box-shadow">
-            <i className="fas fa-bell"></i>
-          </button>
+          
+          <NotificationDropdown notifications={
+            [
+              {
+                 content : "content",
+              date : formattedDate
+              },
+              {
+                 content : "content",
+              date : "date"
+              },
+              {
+                 content : "content",
+              date : "date"
+              },
+              {
+                 content : "content",
+              date : "date"
+              },
+              {
+                 content : "content",
+              date : "date"
+              }
+            ]
+          }/>
+
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { color } from 'chart.js/helpers';
 
 export const api_key = "57824b28a16da3eb51a1fe9cdc4f2823";
 
@@ -31,7 +32,20 @@ export const useChart = () => {
     fetchData();
   }, []);
 
- 
+  const style = {
+    width: "200px",
+    height: "100px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    padding: "1rem 2rem",
+    border: "1px solid grey",
+    borderRadius: "2rem",
+    margin: "1rem",
+    background: "#ffffff",
+    filter: "blur(20%)",
+    color: "#0000",
+  }
 
   return {
     pollutionData,
