@@ -96,6 +96,8 @@ function Header() {
                     required: true,
                   })}
                 ></textarea>
+
+                <button className="primary-btn mt-4">Submit</button>
               </div>
             </motion.div>
           )}
