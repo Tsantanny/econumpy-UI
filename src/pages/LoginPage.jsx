@@ -5,7 +5,7 @@ import "../styles/global-style.css";
 import "../styles/RegisterPage.css";
 
 const LoginPage = () => {
-  const { handleSubmit, register, handleClick, errors, navigateTo } = useLogin();
+  const { handleSubmit, register, handleClick, navigateTo, handleRadioChange, isError } = useLogin();
 
   return (
     <>
@@ -38,7 +38,7 @@ const LoginPage = () => {
             <div className="form-floating ">
               <input
                 type="email"
-                className={`form-control ${(errors.email || errors.isError) && "is-invalid"}}`}
+                className={`form-control ${isError && "is-invalid"}}`}
                 id="floatingInput"
                 placeholder="name@example.com"
                 {...register("email", {
@@ -53,7 +53,7 @@ const LoginPage = () => {
             <div className="form-floating">
               <input
                 type="password"
-                className={`form-control ${(errors.password || errors.isError) && "is-invalid"}`}
+                className={`form-control ${isError && "is-invalid"}`}
                 id="floatingPassword"
                 placeholder="Password"
                 {...register("password", {
@@ -63,6 +63,18 @@ const LoginPage = () => {
               />
               <label htmlFor="floatingPassword">Password</label>
               <p className="invalid-feedback">Password is invalid</p>
+            </div>
+
+            <div>
+              <label>Account type :</label>
+              <div className="form-check form-check-inline mx-3">
+                <input className="form-check-input" onChange={(e) => handleRadioChange(e)}  type="radio" name="category" id="inlineRadio1" value="individual"/>
+                <label className="form-check-label" htmlFor="inlineRadio1">Inidividual</label>
+              </div>
+              <div className="form-check form-check-inline">
+                <input className="form-check-input" onChange={(e) => handleRadioChange(e)}  type="radio" name="category" id="inlineRadio2" value="organization"/>
+                <label className="form-check-label" htmlFor="inlineRadio2">Organization</label>
+              </div>
             </div>
 
             <button className="primary-btn mt-2">Submit</button>

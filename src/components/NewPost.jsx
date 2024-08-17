@@ -56,19 +56,19 @@ function NewPost() {
                 <label class="form-check-label">Category:</label>
                 <div class="form-check">
                   <input
-                    class="form-check-input"
+                    className="form-check-input"
                     type="radio"
                     name="category"
                     id="environment"
                     value="environment"
                   />
-                  <label class="form-check-label" for="environment">
+                  <label className="form-check-label" htmlFor="environment">
                     Environment
                   </label>
                 </div>
-                <div class="form-check">
+                <div className="form-check">
                   <input
-                    class="form-check-input"
+                    className="form-check-input"
                     type="radio"
                     name="category"
                     id="health"
