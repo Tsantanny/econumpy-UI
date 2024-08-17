@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useState } from 'react';
 
-export const BASE_URL = `http://192.168.0.31:8080`
+export const BASE_URL = `http://192.168.0.77:8080`
 
 
 
@@ -23,7 +23,7 @@ export const useLogin = () => {
     const handleClick = async (data) => {
         // console.log(data);
         try {
-            const isUserExists = await axios.get(`${BASE_URL}/api/individual/${data.email}`)
+            const isUserExists = await axios.get(`${BASE_URL}/api/${category}/${data.email}`)
             
             if (isUserExists) {
 
@@ -32,7 +32,10 @@ export const useLogin = () => {
                             
                     if (res.data) {
                         console.log("OK");
+                        // console.log(isUserExists.data.username);
+                        
                         localStorage.setItem(`email-${data.email}`, data.email)
+                        localStorage.setItem(`username-${isUserExists.data.username}`, isUserExists.data.username)
                         navigate("/")
                     }else throw new Error("Connection failed");
             }
