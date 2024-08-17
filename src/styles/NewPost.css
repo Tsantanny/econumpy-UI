@@ -1,0 +1,52 @@
+.pop-up-container {
+  position: absolute;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  right: 0;
+  left: 0;
+  top: 0;
+  width: 100vw;
+}
+
+.darkBackground {
+  transition: 0.5s;
+  background-color: #000000c4;
+  z-index: 500;
+  height: 100vh;
+  position: fixed;
+}
+
+.update-pop-up {
+  position: absolute;
+  display: flex;
+  z-index: 100;
+  top: 100px;
+  width: 50vw;
+  padding-block: 50px;
+  border-radius: 20px;
+  background: rgb(252, 252, 252);
+  box-shadow: 5px 10px 20px 20px rgba(0, 0, 0, 0.082);
+}
+.update-pop-up div {
+  bottom: 20px;
+}
+.update-pop-up .close {
+  position: absolute;
+  right: 10px;
+  border-radius: 50% !important;
+  top: 10px;
+  height: 30px;
+  width: 30px;
+  background-color: black;
+  border: none;
+  color: white;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.field {
+  top: 80px;
+}

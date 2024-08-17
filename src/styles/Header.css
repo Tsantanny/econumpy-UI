@@ -4,6 +4,7 @@
   position: fixed;
   width: 100%;
   top: 0;
+  z-index: 100;
 }
 
 .header i {
@@ -36,8 +37,14 @@
   background-color: var(--mint-cream);
   display: flex;
   border-radius: 20px;
+  align-items: center;
+  border: 1px solid rgb(197, 197, 197);
 }
-
+.search-bar .round-btn {
+  border: none !important;
+  height: 40px;
+  width: 40px;
+}
 .personnal {
   display: flex;
   gap: 20px;
