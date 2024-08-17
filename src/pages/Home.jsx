@@ -1,7 +1,7 @@
 import Header from "../components/Header";
 import SideBar from "../components/SideBar";
 import Posts from "../components/Posts";
-import NewPost from "../components/NewPost";
+// import NewPost from "../components/NewPost";
 import RightSideBar from "../components/RightSideBar";
 function Home() {
   return (

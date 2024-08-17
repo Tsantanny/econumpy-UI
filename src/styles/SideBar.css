@@ -8,7 +8,9 @@
   padding-top: 30px;
   position: fixed;
 }
-
+.side-bar ul li {
+  cursor: pointer;
+}
 .min-container.side-bar.box-shadow {
   box-shadow: 0px 10px 8px rgba(0, 0, 0, 0.2);
 }

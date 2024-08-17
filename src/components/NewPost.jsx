@@ -52,9 +52,9 @@ function NewPost() {
                 })}
               />
 
-              <div class="mb-3 d-flex gap-3" {...register("postType")}>
-                <label class="form-check-label">Category:</label>
-                <div class="form-check">
+              <div className="mb-3 d-flex gap-3" {...register("postType")}>
+                <label className="form-check-label">Category:</label>
+                <div className="form-check">
                   <input
                     className="form-check-input"
                     type="radio"
@@ -74,7 +74,7 @@ function NewPost() {
                     id="health"
                     value="health"
                   />
-                  <label class="form-check-label" for="health" >
+                  <label className="form-check-label" htmlFor="health" >
                     Health
                   </label>
                 </div>
